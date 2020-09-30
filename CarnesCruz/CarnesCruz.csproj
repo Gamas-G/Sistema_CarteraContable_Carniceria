@@ -1,0 +1,286 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2D526D63-5C5C-4774-B317-B01C084E4AF0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CarnesCruz</RootNamespace>
+    <AssemblyName>CarnesCruz</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>cabezaIco.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CircularProgressBar, Version=2.8.0.16, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
+      <HintPath>..\packages\CircularProgressBar.2.8.0.16\lib\net40\CircularProgressBar.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\..\..\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WinFormAnimation, Version=1.6.0.4, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
+      <HintPath>..\packages\WinFormAnimation.1.6.0.4\lib\net40\WinFormAnimation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CarnesCruz\Controlador\BaseDeDatos\ConexionBaseDeDatos.cs" />
+    <Compile Include="CarnesCruz\Controlador\Cliente\ConsultasCliente.cs" />
+    <Compile Include="CarnesCruz\Controlador\Facturacion\ConsultasFacturacion.cs" />
+    <Compile Include="CarnesCruz\Controlador\Inicio\ConsultasInicio.cs" />
+    <Compile Include="CarnesCruz\Controlador\Procesos.cs" />
+    <Compile Include="CarnesCruz\Controlador\Producto\ConsultasProducto.cs" />
+    <Compile Include="CarnesCruz\Controlador\Reporte\ConsultasReporte.cs" />
+    <Compile Include="CarnesCruz\ModeloVista\Cliente\Cliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CarnesCruz\ModeloVista\Cliente\Cliente.Designer.cs">
+      <DependentUpon>Cliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CarnesCruz\ModeloVista\Cliente\EditarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CarnesCruz\ModeloVista\Cliente\EditarCliente.Designer.cs">
+      <DependentUpon>EditarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CarnesCruz\ModeloVista\Facturacion\Facturacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CarnesCruz\ModeloVista\Facturacion\Facturacion.Designer.cs">
+      <DependentUpon>Facturacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CarnesCruz\ModeloVista\Facturacion\Pago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CarnesCruz\ModeloVista\Facturacion\Pago.Designer.cs">
+      <DependentUpon>Pago.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CarnesCruz\ModeloVista\Facturacion\PdfImprimir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CarnesCruz\ModeloVista\Facturacion\PdfImprimir.Designer.cs">
+      <DependentUpon>PdfImprimir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CarnesCruz\ModeloVista\Facturacion\PdfRuta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CarnesCruz\ModeloVista\Facturacion\PdfRuta.Designer.cs">
+      <DependentUpon>PdfRuta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CarnesCruz\ModeloVista\Inicio\Inicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CarnesCruz\ModeloVista\Inicio\Inicio.Designer.cs">
+      <DependentUpon>Inicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CarnesCruz\ModeloVista\Productos\EditarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CarnesCruz\ModeloVista\Productos\EditarProducto.Designer.cs">
+      <DependentUpon>EditarProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CarnesCruz\ModeloVista\Productos\Productos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CarnesCruz\ModeloVista\Productos\Productos.Designer.cs">
+      <DependentUpon>Productos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CarnesCruz\ModeloVista\Reporte\EditarDeuda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CarnesCruz\ModeloVista\Reporte\EditarDeuda.Designer.cs">
+      <DependentUpon>EditarDeuda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CarnesCruz\ModeloVista\Reporte\PdfRuta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CarnesCruz\ModeloVista\Reporte\PdfRuta.Designer.cs">
+      <DependentUpon>PdfRuta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CarnesCruz\ModeloVista\Reporte\Reporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CarnesCruz\ModeloVista\Reporte\Reporte.Designer.cs">
+      <DependentUpon>Reporte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CarnesCruz\ModeloVista\Cliente\Cliente.resx">
+      <DependentUpon>Cliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CarnesCruz\ModeloVista\Cliente\EditarCliente.resx">
+      <DependentUpon>EditarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CarnesCruz\ModeloVista\Facturacion\Facturacion.resx">
+      <DependentUpon>Facturacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CarnesCruz\ModeloVista\Facturacion\Pago.resx">
+      <DependentUpon>Pago.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CarnesCruz\ModeloVista\Facturacion\PdfImprimir.resx">
+      <DependentUpon>PdfImprimir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CarnesCruz\ModeloVista\Facturacion\PdfRuta.resx">
+      <DependentUpon>PdfRuta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CarnesCruz\ModeloVista\Inicio\Inicio.resx">
+      <DependentUpon>Inicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CarnesCruz\ModeloVista\Productos\EditarProducto.resx">
+      <DependentUpon>EditarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CarnesCruz\ModeloVista\Productos\Productos.resx">
+      <DependentUpon>Productos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CarnesCruz\ModeloVista\Reporte\EditarDeuda.resx">
+      <DependentUpon>EditarDeuda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CarnesCruz\ModeloVista\Reporte\PdfRuta.resx">
+      <DependentUpon>PdfRuta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CarnesCruz\ModeloVista\Reporte\Reporte.resx">
+      <DependentUpon>Reporte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\CarnesCruz.CarnesCruz.Controlador.Facturacion.ConsultasFacturacion.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="AxAcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.1 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CarnesCruz\Imagenes\Pierna.png" />
+    <None Include="CarnesCruz\Imagenes\cerdo %281%29.png" />
+    <None Include="CarnesCruz\Imagenes\cabeza-res.png" />
+    <None Include="CarnesCruz\Imagenes\limpiar.png" />
+    <None Include="CarnesCruz\Imagenes\add.png" />
+    <None Include="CarnesCruz\Imagenes\cabeza.png" />
+    <None Include="CarnesCruz\Imagenes\cerdo.png" />
+    <Content Include="cabezaIco.ico" />
+    <Content Include="CarnesCruz\Imagenes\Icons\calendar.png" />
+    <None Include="CarnesCruz\Imagenes\Icons\cancel.png" />
+    <Content Include="CarnesCruz\Imagenes\Icons\cancelarBoton.png" />
+    <Content Include="CarnesCruz\Imagenes\Icons\Clientes.png" />
+    <Content Include="CarnesCruz\Imagenes\Icons\edit.png" />
+    <None Include="CarnesCruz\Imagenes\Icons\meat.png" />
+    <None Include="CarnesCruz\Imagenes\Icons\next.png" />
+    <Content Include="CarnesCruz\Imagenes\Icons\Notas.png" />
+    <Content Include="CarnesCruz\Imagenes\Icons\piggy-bank.png" />
+    <None Include="CarnesCruz\Imagenes\Icons\producto.png" />
+    <None Include="CarnesCruz\Imagenes\Icons\print.png" />
+    <None Include="CarnesCruz\Imagenes\Icons\piggy.png" />
+    <Content Include="CarnesCruz\Imagenes\Icons\Productos.png" />
+    <Content Include="CarnesCruz\Imagenes\Icons\Reporte.png" />
+    <Content Include="CarnesCruz\Imagenes\Icons\trash.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
