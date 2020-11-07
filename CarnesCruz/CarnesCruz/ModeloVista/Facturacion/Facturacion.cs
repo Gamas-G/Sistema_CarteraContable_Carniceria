@@ -553,6 +553,8 @@ namespace CarnesCruz.CarnesCruz.ModeloVista.Facturacion
 
             if (banderaPago == '0') return;
 
+            //MessageBox.Show("hey");
+
             if (!GenerarNota()) return;
 
             DeudasClientes(sender, e);

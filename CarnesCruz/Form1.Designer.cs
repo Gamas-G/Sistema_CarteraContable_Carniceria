@@ -76,7 +76,6 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = global::CarnesCruz.Properties.Resources.cerdo;
             this.pictureBox1.Location = new System.Drawing.Point(0, 388);
             this.pictureBox1.Name = "pictureBox1";

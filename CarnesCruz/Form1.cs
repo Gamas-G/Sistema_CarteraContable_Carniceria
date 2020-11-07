@@ -2,6 +2,7 @@
 using System;
 using System.Diagnostics;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -150,9 +151,9 @@ namespace CarnesCruz
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
-            var processExists = Process.GetProcesses().Any(p => p.ProcessName.Contains("mysqld"));
+            //var processExists = Process.GetProcesses().Any(p => p.ProcessName.Contains("mysqld"));
 
-            if (processExists) Procesos.CerrarMysql();
+            //if (processExists) Procesos.CerrarMysql();
         }
     }
 }

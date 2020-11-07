@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Diagnostics;
 using System.Windows.Forms;
+using System.Drawing.Printing;
 
 namespace CarnesCruz.CarnesCruz.ModeloVista.Facturacion
 {
@@ -24,24 +25,28 @@ namespace CarnesCruz.CarnesCruz.ModeloVista.Facturacion
              */
             try
             {
+                PrintDocument document = new PrintDocument();
+                printDocument1.DocumentName = rutaArchivo;
                 using (PrintDialog Dialog = new PrintDialog())
                 {
                     DialogResult res =  Dialog.ShowDialog();
                     if(res == DialogResult.OK)
                     {
-                        ProcessStartInfo printProcessInfo = new ProcessStartInfo()
-                        {
-                            Verb = "print",
-                            CreateNoWindow = true,
-                            FileName = rutaArchivo,
-                            WindowStyle = ProcessWindowStyle.Hidden,
-                        };
+                        Dialog.Document = document;
+                        document.Print();
+                        //ProcessStartInfo printProcessInfo = new ProcessStartInfo()
+                        //{
+                        //    Verb = "print",
+                        //    CreateNoWindow = true,
+                        //    FileName = rutaArchivo,
+                        //    WindowStyle = ProcessWindowStyle.Hidden,
+                        //};
 
-                        Process printProcess = new Process();
-                        printProcess.StartInfo = printProcessInfo;
-                        printProcess.Start();
+                        //Process printProcess = new Process();
+                        //printProcess.StartInfo = printProcessInfo;
+                        //printProcess.Start();
 
-                        printProcess.WaitForExit();
+                        //printProcess.WaitForExit();
                         //printProcess.Kill();
                         //printProcess.WaitForInputIdle();
 

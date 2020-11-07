@@ -38,9 +38,9 @@
             this.panelDivPdf = new System.Windows.Forms.Panel();
             this.panelHeaderDivPdf = new System.Windows.Forms.Panel();
             this.panelDivButtons = new System.Windows.Forms.Panel();
+            this.AbtnImprimir = new System.Windows.Forms.Button();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
-            this.AbtnImprimir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PreViewPdf)).BeginInit();
             this.panelHeader.SuspendLayout();
             this.panelDivPdf.SuspendLayout();
@@ -65,9 +65,9 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(389, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 24);
+            this.label1.Size = new System.Drawing.Size(134, 24);
             this.label1.TabIndex = 2;
-            this.label1.Text = "VISTA";
+            this.label1.Text = "DOCUMENTO";
             // 
             // label2
             // 
@@ -76,9 +76,9 @@
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(579, 25);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(92, 24);
+            this.label2.Size = new System.Drawing.Size(137, 24);
             this.label2.TabIndex = 3;
-            this.label2.Text = "IMPRIMIR";
+            this.label2.Text = "VISTA PREVIA";
             // 
             // labelNombreDelArchivo
             // 
@@ -151,10 +151,6 @@
             this.panelDivButtons.Size = new System.Drawing.Size(206, 713);
             this.panelDivButtons.TabIndex = 8;
             // 
-            // printDialog1
-            // 
-            this.printDialog1.UseEXDialog = true;
-            // 
             // AbtnImprimir
             // 
             this.AbtnImprimir.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -169,10 +165,14 @@
             this.AbtnImprimir.Name = "AbtnImprimir";
             this.AbtnImprimir.Size = new System.Drawing.Size(200, 47);
             this.AbtnImprimir.TabIndex = 1;
-            this.AbtnImprimir.Text = "IMPRIMIR";
+            this.AbtnImprimir.Text = "CONTINUAR";
             this.AbtnImprimir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.AbtnImprimir.UseVisualStyleBackColor = true;
             this.AbtnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+            // 
+            // printDialog1
+            // 
+            this.printDialog1.UseEXDialog = true;
             // 
             // PdfImprimir
             // 

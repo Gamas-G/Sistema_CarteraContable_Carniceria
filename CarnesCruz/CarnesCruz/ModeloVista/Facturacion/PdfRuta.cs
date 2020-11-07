@@ -52,6 +52,7 @@ namespace CarnesCruz.CarnesCruz.ModeloVista.Facturacion
         {
             if (CrearPdf(rutaCompleta))
             {
+                //System.Diagnostics.Process.Start(rutaCompleta);
                 PdfImprimir pdfImprimir = new PdfImprimir();
 
                 pdfImprimir.labelNombreDelArchivo.Text = textBoxNombreArchivo.Text;
@@ -62,9 +63,9 @@ namespace CarnesCruz.CarnesCruz.ModeloVista.Facturacion
                 if (pdfImprimir.ShowDialog() == DialogResult.OK)
                 {
                     DialogResult = DialogResult.OK;
-                    this.Close();
-                }
+                this.Close();
             }
+        }
         }
 
         private bool CrearPdf(string path)
