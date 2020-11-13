@@ -74,16 +74,24 @@ namespace CarnesCruz.CarnesCruz.ModeloVista.Reporte
         {
             if (CrearPdf(rutaCompleta))
             {
-                CarnesCruz.ModeloVista.Facturacion.PdfImprimir pdfImprimir = new CarnesCruz.ModeloVista.Facturacion.PdfImprimir();
-                pdfImprimir.labelNombreDelArchivo.Text = textBoxNombreArchivo.Text;
-                pdfImprimir.PreViewPdf.src = rutaCompleta + "#toolbar=0";
-                pdfImprimir.PreViewPdf.setShowToolbar(false);
-                pdfImprimir.rutaArchivo = rutaCompleta;
-                pdfImprimir.ControlBox = false;
-                if (pdfImprimir.ShowDialog() == DialogResult.OK)
+                if (checkBoxNavegador.Checked)
                 {
+                    System.Diagnostics.Process.Start(rutaCompleta);
                     DialogResult = DialogResult.OK;
                     this.Close();
+                }
+                else { 
+                    CarnesCruz.ModeloVista.Facturacion.PdfImprimir pdfImprimir = new CarnesCruz.ModeloVista.Facturacion.PdfImprimir();
+                    pdfImprimir.labelNombreDelArchivo.Text = textBoxNombreArchivo.Text;
+                    pdfImprimir.PreViewPdf.src = rutaCompleta + "#toolbar=0";
+                    pdfImprimir.PreViewPdf.setShowToolbar(false);
+                    pdfImprimir.rutaArchivo = rutaCompleta;
+                    pdfImprimir.ControlBox = false;
+                    if (pdfImprimir.ShowDialog() == DialogResult.OK)
+                    {
+                        DialogResult = DialogResult.OK;
+                        this.Close();
+                    }
                 }
             }
         }

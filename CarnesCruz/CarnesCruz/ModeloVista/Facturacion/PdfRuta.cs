@@ -52,19 +52,27 @@ namespace CarnesCruz.CarnesCruz.ModeloVista.Facturacion
         {
             if (CrearPdf(rutaCompleta))
             {
-                //System.Diagnostics.Process.Start(rutaCompleta);
-                PdfImprimir pdfImprimir = new PdfImprimir();
-
-                pdfImprimir.labelNombreDelArchivo.Text = textBoxNombreArchivo.Text;
-                pdfImprimir.PreViewPdf.src = rutaCompleta + "#toolbar=0";
-                pdfImprimir.PreViewPdf.setShowToolbar(false);
-                pdfImprimir.rutaArchivo = rutaCompleta;
-                pdfImprimir.ControlBox = false;
-                if (pdfImprimir.ShowDialog() == DialogResult.OK)
+                if (checkBoxNavegador.Checked)
                 {
+                    System.Diagnostics.Process.Start(rutaCompleta);
                     DialogResult = DialogResult.OK;
-                this.Close();
-            }
+                    this.Close();
+                }
+                else
+                {
+                    PdfImprimir pdfImprimir = new PdfImprimir();
+
+                    pdfImprimir.labelNombreDelArchivo.Text = textBoxNombreArchivo.Text;
+                    pdfImprimir.PreViewPdf.src = rutaCompleta + "#toolbar=0";
+                    pdfImprimir.PreViewPdf.setShowToolbar(false);
+                    pdfImprimir.rutaArchivo = rutaCompleta;
+                    pdfImprimir.ControlBox = false;
+                    if (pdfImprimir.ShowDialog() == DialogResult.OK)
+                    {
+                        DialogResult = DialogResult.OK;
+                        this.Close();
+                    }
+                }
         }
         }
 

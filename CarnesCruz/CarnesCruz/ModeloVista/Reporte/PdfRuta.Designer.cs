@@ -39,6 +39,8 @@
             this.buttonImprimir = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+            this.label4 = new System.Windows.Forms.Label();
+            this.checkBoxNavegador = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // panel2
@@ -170,12 +172,36 @@
             this.label1.TabIndex = 18;
             this.label1.Text = "Almacenar en Carpeta:";
             // 
+            // label4
+            // 
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(559, 232);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(69, 19);
+            this.label4.TabIndex = 28;
+            this.label4.Text = "Abrir con";
+            // 
+            // checkBoxNavegador
+            // 
+            this.checkBoxNavegador.AutoSize = true;
+            this.checkBoxNavegador.Checked = true;
+            this.checkBoxNavegador.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxNavegador.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxNavegador.Location = new System.Drawing.Point(634, 231);
+            this.checkBoxNavegador.Name = "checkBoxNavegador";
+            this.checkBoxNavegador.Size = new System.Drawing.Size(99, 22);
+            this.checkBoxNavegador.TabIndex = 29;
+            this.checkBoxNavegador.Text = "Navegador";
+            this.checkBoxNavegador.UseVisualStyleBackColor = true;
+            // 
             // PdfRuta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(744, 275);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.checkBoxNavegador);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnCancelar);
@@ -207,5 +233,7 @@
         private System.Windows.Forms.Button buttonImprimir;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.CheckBox checkBoxNavegador;
     }
 }
